@@ -1,0 +1,35 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---- C / C++ 编译产物 ----
+*.exe
+*.o
+*.out
+*.obj
+
+# ---- 数据与模型（体积大，不进版本库）----
+data/
+datasets/
+*.dcm
+*.nii
+*.nii.gz
+*.pth
+*.pt
+*.ckpt
+*.pkl
+models/
+
+# ---- 环境 ----
+.env
+*.log
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
