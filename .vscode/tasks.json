@@ -1,0 +1,86 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C: 编译并运行当前文件",
+            "type": "shell",
+            "command": "D:\\Dev\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "用 MinGW gcc 按 C11 标准编译当前 .c 文件，输出同名 .exe",
+            "dependsOn": "C: 运行已编译的程序",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "C: 运行已编译的程序",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": false,
+                "echo": false
+            },
+            "problemMatcher": [],
+            "detail": "运行刚编译出来的 .exe"
+        },
+        {
+            "label": "C++: 编译并运行当前文件",
+            "type": "shell",
+            "command": "D:\\Dev\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "用 g++ 按 C++17 标准编译当前 .cpp 文件"
+        },
+        {
+            "label": "Python: 运行当前文件",
+            "type": "shell",
+            "command": "D:\\Dev\\Miniconda3\\envs\\medai\\python.exe",
+            "args": [
+                "${file}"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true
+            },
+            "problemMatcher": [],
+            "detail": "用 medai 环境的 Python 运行当前 .py 文件"
+        }
+    ]
+}
